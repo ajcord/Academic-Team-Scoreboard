@@ -1,0 +1,28 @@
+body {
+    margin: 20px 0;
+}
+
+/*button:focus {
+    outline: none !important;
+}*/
+
+.team-name {
+    font-size: 1.5em;
+    height: auto;
+    text-align: center;
+}
+
+.score {
+    font-size: 3em;
+    height: auto;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#timer {
+    font-size: 4em;
+}
+
+#timer-pause {
+    display: none;
+}
