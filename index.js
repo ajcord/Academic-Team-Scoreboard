@@ -76,7 +76,7 @@ $("#show-scoreboard").on("click", function() {
         "width=800, height=600");
 
     //Insert the correct stats once the popup loads
-    $(scoreboardWindow.document).on("load", function() {
+    $(scoreboardWindow.document).ready(function() {
         updateScoreboard();
     });
 });
