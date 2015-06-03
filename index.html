@@ -5,7 +5,7 @@
 <title>Academic Team Scoreboard</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="scoreboard.css">
 
 <script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
 
@@ -17,99 +17,27 @@
 
     <div class="row text-center">
 
-      <div class="col-md-4 col-md-push-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Match</h3>
-          </div>
-          <div class="panel-body">
-
-            <h1 id="timer">0.00</h1>
-
-            <button class="btn btn-lg btn-success" id="timer-start" disabled="true">
-              <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-              Start
-            </button>
-            <button class="btn btn-lg btn-warning" id="timer-pause">
-              <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
-              Pause
-            </button>
-            <button class="btn btn-lg btn-danger" id="timer-reset">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-              Reset
-            </button>
-
-            <br><br>
-
-            <button class="btn btn-lg btn-default" id="timer-10">
-              <span class="glyphicon glyphicon-time" aria-hidden="true"></span> 10.00
-            </button>
-            <button class="btn btn-lg btn-default" id="timer-30">
-              <span class="glyphicon glyphicon-time" aria-hidden="true"></span> 30.00
-            </button>
-
-            <br><br>
-
-            Round:
-            <br>
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-default round active">1</button>
-              <button type="button" class="btn btn-default round">2</button>
-              <button type="button" class="btn btn-default round">3</button>
-              <button type="button" class="btn btn-default round">4</button>
-              <button type="button" class="btn btn-default round">5</button>
-            </div>
-
-            <br><br>
-
-            <button class="btn btn-lg btn-default" id="show-scoreboard">Display Scoreboard</button>
-          </div>
-        </div>
+      <div class="col-sm-6">
+        <h2 class="team-name" id="home-name">Versailles</h2>
+        <h1 class="score" id="home-score">0</h1>
       </div>
 
-      <div class="col-md-4 col-md-pull-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <input type="text" class="form-control team-name" id="home-name" placeholder="Home" value="Versailles" />
-            </h3>
-          </div>
-          <div class="panel-body">
-            <input type="text" class="form-control score" id="home-score" value="0" />
-            <button class="btn btn-lg btn-success" id="home-plus-1" aria-label="Add 1">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </button>
-            <button class="btn btn-lg btn-danger" id="home-minus-1" aria-label="Minus 1">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
+      <div class="col-sm-6">
+        <h2 class="team-name" id="visitor-name">Visitor</h2>
+        <h1 class="score" id="visitor-score">0</h1>
       </div>
+    </div>
 
-      <div class="col-md-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <input type="text" class="form-control team-name" id="visitor-name" placeholder="Visitor" />
-            </h3>
-          </div>
-          <div class="panel-body">
-            <input type="text" class="form-control score" id="visitor-score" value="0" />
-            <button class="btn btn-lg btn-success" id="visitor-plus-1" aria-label="Add 1">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            </button>
-            <button class="btn btn-lg btn-danger" id="visitor-minus-1" aria-label="Minus 1">
-              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <h2 id="round">Round 1</h2>
       </div>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="index.js"></script>
+<script src="match.js"></script>
 
 </body>
 </html>
