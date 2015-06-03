@@ -70,6 +70,7 @@ $(".round").on("click", function() {
     $(".round").removeClass("active");
     $(this).addClass("active");
     round = $(this).index() + 1;
+    updateScoreboard();
 });
 
 $("#show-scoreboard").on("click", function() {
