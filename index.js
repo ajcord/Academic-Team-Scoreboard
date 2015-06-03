@@ -11,8 +11,10 @@ var round = 1; //The current round
 var scoreboardWindow; //Stores the scoreboard window
 
 function updateScoreboard() {
-    $(scoreboardWindow.document).find("#home-score").text(homeScore);
-    $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
+    if (scoreboardWindow) {
+        $(scoreboardWindow.document).find("#home-score").text(homeScore);
+        $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
+    }
 }
 
 $("#home-score").on("change", function() {
