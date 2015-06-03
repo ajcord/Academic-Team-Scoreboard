@@ -1,11 +1,6 @@
 //Setup Firebase
 var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
 
-//Get which match we're viewing
-// var match = window.location.hash.substr(1);
-
-// var matches = firebase.child("match");
-
 firebase.on("value", function(snapshot) {
     var data = snapshot.val();
 
