@@ -1,0 +1,9 @@
+{
+  "firebase": "academic-team-scoreboard",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

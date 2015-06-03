@@ -1,5 +1,7 @@
 var homeScore = 0;
 var visitorScore = 0;
+var homeName = "Versailles";
+var visitorName = "Visitor";
 
 var startingTimer = 10; //The original time on the clock
 var timer = 0; //The time on the clock
@@ -10,43 +12,73 @@ var round = 1; //The current round
 
 var scoreboardWindow; //Stores the scoreboard window
 
+function updateScoreboard() {
+    if (scoreboardWindow) {
+        $(scoreboardWindow.document).find("#home-name").text(homeName);
+        $(scoreboardWindow.document).find("#visitor-name").text(visitorName);
+        $(scoreboardWindow.document).find("#home-score").text(homeScore);
+        $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
+        $(scoreboardWindow.document).find("#round").text("Round " + round);
+    }
+}
+
+$("#home-name").on("change", function() {
+    homeName = $("#home-name").val();
+    updateScoreboard();
+});
+
+$("#visitor-name").on("change", function() {
+    visitorName = $("#visitor-name").val();
+    updateScoreboard();
+});
+
 $("#home-score").on("change", function() {
     homeScore = $("#home-score").val();
+    updateScoreboard();
 });
 
 $("#home-plus-1").on("click", function() {
     homeScore++;
     $("#home-score").val(homeScore);
+    updateScoreboard();
 });
 
 $("#home-minus-1").on("click", function() {
     homeScore--;
     $("#home-score").val(homeScore);
+    updateScoreboard();
 });
 
 $("#visitor-score").on("change", function() {
     visitorScore = $("#visitor-score").val();
+    updateScoreboard();
 });
 
 $("#visitor-plus-1").on("click", function() {
     visitorScore++;
     $("#visitor-score").val(visitorScore);
+    updateScoreboard();
 });
 
 $("#visitor-minus-1").on("click", function() {
     visitorScore--;
     $("#visitor-score").val(visitorScore);
+    updateScoreboard();
 });
 
 $(".round").on("click", function() {
     $(".round").removeClass("active");
     $(this).addClass("active");
     round = $(this).index() + 1;
+    updateScoreboard();
 });
 
 $("#show-scoreboard").on("click", function() {
     scoreboardWindow = window.open("scoreboard.html", "scoreboardWindow",
         "width=800, height=600");
+
+    //Insert the correct stats once the popup loads
+    scoreboardWindow.onload = updateScoreboard;
 });
 
 $("#timer-10").on("click", function() {
@@ -102,6 +134,14 @@ function startTimer() {
             $("#timer").text("0.00");
             $("#timer-pause").hide();
             $("#timer-start").show().attr("disabled", "true");
+
+            //Flash the scoreboard
+            if (scoreboardWindow) {
+                $(scoreboardWindow.document.body).css("background-color", "red");
+                window.setTimeout(function() {
+                    $(scoreboardWindow.document.body).css("background-color", "white");
+                }, 500);
+            }
         }
     }, 25);
 }
