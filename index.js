@@ -18,6 +18,7 @@ function updateScoreboard() {
         $(scoreboardWindow.document).find("#visitor-name").text(visitorName);
         $(scoreboardWindow.document).find("#home-score").text(homeScore);
         $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
+        $(scoreboardWindow.document).find("#round").text("Round " + round);
     }
 }
 
