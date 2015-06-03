@@ -12,6 +12,7 @@ var scoreboardWindow; //Stores the scoreboard window
 
 $("#home-score").on("change", function() {
     homeScore = $("#home-score").val();
+    $(scoreboardWindow.document).find("#home-score").text(homeScore);
 });
 
 $("#home-plus-1").on("click", function() {
