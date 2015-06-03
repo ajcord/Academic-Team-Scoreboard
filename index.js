@@ -18,25 +18,30 @@ $("#home-score").on("change", function() {
 $("#home-plus-1").on("click", function() {
     homeScore++;
     $("#home-score").val(homeScore);
+    $(scoreboardWindow.document).find("#home-score").text(homeScore);
 });
 
 $("#home-minus-1").on("click", function() {
     homeScore--;
     $("#home-score").val(homeScore);
+    $(scoreboardWindow.document).find("#home-score").text(homeScore);
 });
 
 $("#visitor-score").on("change", function() {
     visitorScore = $("#visitor-score").val();
+    $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
 });
 
 $("#visitor-plus-1").on("click", function() {
     visitorScore++;
     $("#visitor-score").val(visitorScore);
+    $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
 });
 
 $("#visitor-minus-1").on("click", function() {
     visitorScore--;
     $("#visitor-score").val(visitorScore);
+    $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
 });
 
 $(".round").on("click", function() {
@@ -48,6 +53,12 @@ $(".round").on("click", function() {
 $("#show-scoreboard").on("click", function() {
     scoreboardWindow = window.open("scoreboard.html", "scoreboardWindow",
         "width=800, height=600");
+
+    //Insert the correct stats once the popup loads
+    $(scoreboardWindow.document).on("ready", function() {
+        $(scoreboardWindow.document).find("#home-score").text(homeScore);
+        $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
+    });
 });
 
 $("#timer-10").on("click", function() {
