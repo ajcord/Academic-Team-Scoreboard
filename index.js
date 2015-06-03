@@ -134,6 +134,14 @@ function startTimer() {
             $("#timer").text("0.00");
             $("#timer-pause").hide();
             $("#timer-start").show().attr("disabled", "true");
+
+            //Flash the scoreboard
+            if (scoreboardWindow) {
+                $(scoreboardWindow.document.body).css("background-color", "red");
+                window.setTimeout(function() {
+                    $(scoreboardWindow.document.body).css("background-color", "white");
+                }, 500);
+            }
         }
     }, 25);
 }
