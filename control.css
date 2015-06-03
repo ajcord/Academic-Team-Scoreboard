@@ -24,10 +24,14 @@ body {
     font-size: 4em;
 }
 
-#timer-10, #timer-30, #timer-start, #timer-pause, #timer-reset {
+#timer-start, #timer-pause, #timer-reset {
     width: 100px;
 }
 
 #timer-pause {
     display: none;
+}
+
+#timer-10, #timer-30 {
+    width: 80px;
 }
