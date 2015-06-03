@@ -12,6 +12,16 @@ var round = 1; //The current round
 
 var scoreboardWindow; //Stores the scoreboard window
 
+//Setup Firebase
+var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
+firebase.set({
+    "home_name": homeName,
+    "visitor_name": visitorName,
+    "home_score": homeScore,
+    "visitor_score": visitorScore,
+    "round": round
+});
+
 function updateScoreboard() {
     if (scoreboardWindow) {
         $(scoreboardWindow.document).find("#home-name").text(homeName);
@@ -25,45 +35,53 @@ function updateScoreboard() {
 $("#home-name").on("change", function() {
     homeName = $("#home-name").val();
     updateScoreboard();
+    firebase.update({"home_name": homeName});
 });
 
 $("#visitor-name").on("change", function() {
     visitorName = $("#visitor-name").val();
     updateScoreboard();
+    firebase.update({"visitor_name": visitorName});
 });
 
 $("#home-score").on("change", function() {
     homeScore = $("#home-score").val();
     updateScoreboard();
+    firebase.update({"home_score": homeScore});
 });
 
 $("#home-plus-1").on("click", function() {
     homeScore++;
     $("#home-score").val(homeScore);
     updateScoreboard();
+    firebase.update({"home_score": homeScore});
 });
 
 $("#home-minus-1").on("click", function() {
     homeScore--;
     $("#home-score").val(homeScore);
     updateScoreboard();
+    firebase.update({"home_score": homeScore});
 });
 
 $("#visitor-score").on("change", function() {
     visitorScore = $("#visitor-score").val();
     updateScoreboard();
+    firebase.update({"visitor_score": visitorScore});
 });
 
 $("#visitor-plus-1").on("click", function() {
     visitorScore++;
     $("#visitor-score").val(visitorScore);
     updateScoreboard();
+    firebase.update({"visitor_score": visitorScore});
 });
 
 $("#visitor-minus-1").on("click", function() {
     visitorScore--;
     $("#visitor-score").val(visitorScore);
     updateScoreboard();
+    firebase.update({"visitor_score": visitorScore});
 });
 
 $(".round").on("click", function() {
@@ -71,6 +89,7 @@ $(".round").on("click", function() {
     $(this).addClass("active");
     round = $(this).index() + 1;
     updateScoreboard();
+    firebase.update({"round": round});
 });
 
 $("#show-scoreboard").on("click", function() {
@@ -118,7 +137,6 @@ $("#timer-reset").on("click", function() {
     $("#timer-pause").hide();
     $("#timer-start").show().removeAttr("disabled");
 });
-
 
 function startTimer() {
     start = new Date().getTime();
