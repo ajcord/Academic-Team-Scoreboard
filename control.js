@@ -14,13 +14,7 @@ var scoreboardWindow; //Stores the scoreboard window
 
 //Setup Firebase
 var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
-firebase.set({
-    "home_name": homeName,
-    "visitor_name": visitorName,
-    "home_score": homeScore,
-    "visitor_score": visitorScore,
-    "round": round
-});
+updateFirebase();
 
 function updateScoreboard() {
     if (scoreboardWindow) {
@@ -32,56 +26,66 @@ function updateScoreboard() {
     }
 }
 
+function updateFirebase() {
+    firebase.set({
+        "home_name": homeName,
+        "visitor_name": visitorName,
+        "home_score": homeScore,
+        "visitor_score": visitorScore,
+        "round": round
+    });
+}
+
 $("#home-name").on("change", function() {
     homeName = $("#home-name").val();
     updateScoreboard();
-    firebase.update({"home_name": homeName});
+    updateFirebase();
 });
 
 $("#visitor-name").on("change", function() {
     visitorName = $("#visitor-name").val();
     updateScoreboard();
-    firebase.update({"visitor_name": visitorName});
+    updateFirebase();
 });
 
 $("#home-score").on("change", function() {
     homeScore = $("#home-score").val();
     updateScoreboard();
-    firebase.update({"home_score": homeScore});
+    updateFirebase();
 });
 
 $("#home-plus-1").on("click", function() {
     homeScore++;
     $("#home-score").val(homeScore);
     updateScoreboard();
-    firebase.update({"home_score": homeScore});
+    updateFirebase();
 });
 
 $("#home-minus-1").on("click", function() {
     homeScore--;
     $("#home-score").val(homeScore);
     updateScoreboard();
-    firebase.update({"home_score": homeScore});
+    updateFirebase();
 });
 
 $("#visitor-score").on("change", function() {
     visitorScore = $("#visitor-score").val();
     updateScoreboard();
-    firebase.update({"visitor_score": visitorScore});
+    updateFirebase();
 });
 
 $("#visitor-plus-1").on("click", function() {
     visitorScore++;
     $("#visitor-score").val(visitorScore);
     updateScoreboard();
-    firebase.update({"visitor_score": visitorScore});
+    updateFirebase();
 });
 
 $("#visitor-minus-1").on("click", function() {
     visitorScore--;
     $("#visitor-score").val(visitorScore);
     updateScoreboard();
-    firebase.update({"visitor_score": visitorScore});
+    updateFirebase();
 });
 
 $(".round").on("click", function() {
@@ -89,7 +93,7 @@ $(".round").on("click", function() {
     $(this).addClass("active");
     round = $(this).index() + 1;
     updateScoreboard();
-    firebase.update({"round": round});
+    updateFirebase();
 });
 
 $("#show-scoreboard").on("click", function() {
