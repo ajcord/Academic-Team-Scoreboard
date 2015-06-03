@@ -1,5 +1,7 @@
 var homeScore = 0;
 var visitorScore = 0;
+var homeName = "Versailles";
+var visitorName = "Visitor";
 
 var startingTimer = 10; //The original time on the clock
 var timer = 0; //The time on the clock
@@ -12,10 +14,22 @@ var scoreboardWindow; //Stores the scoreboard window
 
 function updateScoreboard() {
     if (scoreboardWindow) {
+        $(scoreboardWindow.document).find("#home-name").text(homeName);
+        $(scoreboardWindow.document).find("#visitor-name").text(visitorName);
         $(scoreboardWindow.document).find("#home-score").text(homeScore);
         $(scoreboardWindow.document).find("#visitor-score").text(visitorScore);
     }
 }
+
+$("#home-name").on("change", function() {
+    homeName = $("#home-name").val();
+    updateScoreboard();
+});
+
+$("#visitor-name").on("change", function() {
+    visitorName = $("#visitor-name").val();
+    updateScoreboard();
+});
 
 $("#home-score").on("change", function() {
     homeScore = $("#home-score").val();
