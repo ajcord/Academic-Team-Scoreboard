@@ -38,12 +38,18 @@ function updateFirebase() {
 
 $("#home-name").on("change", function() {
     homeName = $("#home-name").val();
+    if (homeName.trim() == "") {
+        homeName = "Home";
+    }
     updateScoreboard();
     updateFirebase();
 });
 
 $("#visitor-name").on("change", function() {
     visitorName = $("#visitor-name").val();
+    if (visitorName.trim() == "") {
+        visitorName = "Visitor";
+    }
     updateScoreboard();
     updateFirebase();
 });
