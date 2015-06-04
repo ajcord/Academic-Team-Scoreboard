@@ -58,7 +58,14 @@ $("#visitor-name").on("change", function() {
 });
 
 $("#home-score").on("change", function() {
-    homeScore = $("#home-score").val();
+    var newScore = parseInt($("#home-score").val());
+    if (isNaN(newScore)) {
+        //Prevent non-numbers from being entered
+        $("#home-score").val(homeScore);
+        return;
+    }
+    homeScore = newScore;
+    $("#home-score").val(homeScore);
     updateScoreboard();
     updateFirebase();
 });
@@ -78,7 +85,14 @@ $("#home-minus-1").on("click", function() {
 });
 
 $("#visitor-score").on("change", function() {
-    visitorScore = $("#visitor-score").val();
+    var newScore = parseInt($("#visitor-score").val());
+    if (isNaN(newScore)) {
+        //Prevent non-numbers from being entered
+        $("#visitor-score").val(visitorScore);
+        return;
+    }
+    visitorScore = newScore;
+    $("#visitor-score").val(visitorScore);
     updateScoreboard();
     updateFirebase();
 });
