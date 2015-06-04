@@ -13,7 +13,7 @@ var round = 1; //The current round
 var scoreboardWindow; //Stores the scoreboard window
 
 //Setup Firebase
-var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
+var firebase = new Firebase("https://vhsacademicteam.firebaseio.com/");
 updateFirebase();
 
 //Get buzzer audio file

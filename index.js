@@ -1,5 +1,5 @@
 //Setup Firebase
-var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
+var firebase = new Firebase("https://vhsacademicteam.firebaseio.com/");
 
 firebase.on("value", function(snapshot) {
     var data = snapshot.val();

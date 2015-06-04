@@ -1,5 +1,5 @@
 {
-  "firebase": "academic-team-scoreboard",
+  "firebase": "vhsacademicteam",
   "public": ".",
   "ignore": [
     "firebase.json",

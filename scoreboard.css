@@ -6,6 +6,10 @@
     font-size: 12em;
 }
 
+.container {
+    max-width: 900px;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -17,7 +21,7 @@ body {
 
 body.has-footer {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 .footer {
@@ -25,17 +29,18 @@ body.has-footer {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 100px;
   background-color: #f5f5f5;
   text-align: center;
 }
 
-.container {
+.footer .container {
   width: auto;
   max-width: 680px;
   padding: 0 15px;
 }
 
-.container .text-muted {
+.footer .container .text-muted {
   margin: 20px 0;
+  font-size: 1.5em;
 }
