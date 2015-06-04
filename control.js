@@ -16,6 +16,9 @@ var scoreboardWindow; //Stores the scoreboard window
 var firebase = new Firebase("https://academic-team-scoreboard.firebaseio.com/");
 updateFirebase();
 
+//Get buzzer audio file
+var buzzer = new Audio("buzzer.mp3");
+
 function updateScoreboard() {
     if (scoreboardWindow) {
         $(scoreboardWindow.document).find("#home-name").text(homeName);
@@ -162,6 +165,9 @@ function startTimer() {
             $("#timer").text("0.00");
             $("#timer-pause").hide();
             $("#timer-start").show().attr("disabled", "true");
+            
+            //Sound the buzzer
+            buzzer.play();
 
             //Flash the scoreboard
             if (scoreboardWindow) {
