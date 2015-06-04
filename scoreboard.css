@@ -10,10 +10,16 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
+    margin-bottom: 0;
+}
+
+body.has-footer {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
