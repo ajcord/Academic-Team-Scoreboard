@@ -174,7 +174,7 @@ function startTimer() {
                 $(scoreboardWindow.document.body).css("background-color", "red");
                 window.setTimeout(function() {
                     $(scoreboardWindow.document.body).css("background-color", "white");
-                }, 500);
+                }, 650);
             }
         }
     }, 25);

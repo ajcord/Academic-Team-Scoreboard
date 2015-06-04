@@ -13,7 +13,7 @@ body {
 }
 
 .score {
-    font-size: 3em;
+    font-size: 5em;
     font-weight: bold;
     height: auto;
     text-align: center;
@@ -21,7 +21,7 @@ body {
 }
 
 #timer {
-    font-size: 4em;
+    font-size: 5em;
 }
 
 #timer-start, #timer-pause, #timer-reset {
