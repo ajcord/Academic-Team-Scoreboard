@@ -5,5 +5,12 @@
     "firebase.json",
     "**/.*",
     "**/node_modules/**"
-  ]
+  ],
+  "headers": [ {
+    "source" : "manifest.appcache",
+    "headers" : [ {
+      "key" : "Cache-Control",
+      "value" : "no-cache"
+    } ]
+  } ]
 }

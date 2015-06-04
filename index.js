@@ -11,3 +11,13 @@ firebase.on("value", function(snapshot) {
     $("#visitor-score").text(data.visitor_score);
     $("#round").text("Round " + data.round);
 });
+
+if (!navigator.onLine) {
+    $("#offline").show();
+}
+
+$(window).on("online", function() {
+    $("#offline").hide();
+}).on("offline", function() {
+    $("#offline").show();
+});

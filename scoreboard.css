@@ -10,6 +10,11 @@
     max-width: 900px;
 }
 
+#offline {
+    margin-top: 20px;
+    display: none;
+}
+
 html {
   position: relative;
   min-height: 100%;

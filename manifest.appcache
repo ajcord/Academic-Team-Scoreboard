@@ -1,0 +1,21 @@
+CACHE MANIFEST
+
+# Version 1.2
+
+index.html
+index.js
+control.html
+control.js
+control.css
+buzzer.mp3
+scoreboard.html
+scoreboard.css
+
+lib/bootstrap-3.3.4-dist/css/bootstrap.min.css
+lib/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css
+lib/firebase.js
+lib/jquery-1.11.3.min.js
+lib/bootstrap-3.3.4-dist/js/bootstrap.min.js
+
+NETWORK:
+*
