@@ -121,7 +121,7 @@ $(".round").on("click", function() {
 
 $("#show-scoreboard").on("click", function() {
     scoreboardWindow = window.open("scoreboard.html", "scoreboardWindow",
-        "width=800, height=600");
+        "width=1280, height=900");
 
     //Insert the correct stats once the popup loads
     scoreboardWindow.onload = updateScoreboard;
