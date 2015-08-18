@@ -187,7 +187,7 @@ function startTimer() {
             if (scoreboardWindow) {
                 $(scoreboardWindow.document.body).css("background-color", "red");
                 window.setTimeout(function() {
-                    $(scoreboardWindow.document.body).css("background-color", "white");
+                    $(scoreboardWindow.document.body).css("background-color", "black");
                 }, 650);
             }
         }

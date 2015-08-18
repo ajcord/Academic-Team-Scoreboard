@@ -1,9 +1,10 @@
 CACHE MANIFEST
 
-# Version 1.4
+# Version 1.6
 
 index.html
 index.js
+index.css
 control.html
 control.js
 control.css
