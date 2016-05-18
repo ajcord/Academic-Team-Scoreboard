@@ -1,16 +1,21 @@
 {
-  "firebase": "vhsacademicteam",
-  "public": ".",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ],
-  "headers": [ {
-    "source" : "manifest.appcache",
-    "headers" : [ {
-      "key" : "Cache-Control",
-      "value" : "no-cache"
-    } ]
-  } ]
+  "hosting": {
+    "public": ".",
+    "headers": [
+      {
+        "source": "manifest.appcache",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }
